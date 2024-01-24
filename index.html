@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<div id="app">
+    Calculater: {{ count }}
+    <br>
+    <input type="number" v-model="number1">
+    <br>
+    <input type="number" v-model="number2">
+    <br>
+    <input type="button" value="+" @click="add()">
+    <input type="button" value="-" @click="subtrack()">
+    <br>
+    <input type="button" value="*" @click="multyple()">
+    <input type="button" value="/" @click="devide()">
+    <br>
+    <input type="number" v-model="result">
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@3.0.1"></script>
+
+<script>
+    const Counter = {
+        data() {
+            return {
+                count: 'Standard',
+                number1: 0,
+                number2: 0,
+                result: 0,
+            }
+        },
+        methods: {
+            add() {
+                 this.result = this.number1 + this.number2;
+                return this.result;
+            },
+            subtrack(){
+                this.result = this.number1 - this.number2;
+                return this.result;
+            },
+            multyple(){
+                this.result = this.number1 * this.number2;
+                return this.result;
+            },
+            devide(){
+                this.result = this.number1 / this.number2;
+                return this.result;
+            },
+        }
+    }
+
+
+    Vue.createApp(Counter).mount('#app')
+
+
+</script>
+</html>
